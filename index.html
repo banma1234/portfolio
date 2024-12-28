@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style/globals.css" />
     <link rel="stylesheet" href="src/style/header.css" />
+    <link rel="stylesheet" href="src/style/animation.css" />
+    <link rel="stylesheet" href="src/style/main.css" />
     <title>Vite App</title>
   </head>
   <body>
@@ -19,14 +21,25 @@
           <li>contact</li>
         </menu>
       </nav>
+      <img class="banner" src="src/assets/damn.svg" alt="banner" />
     </header>
     <main>
-      <img
-        id="main__background"
-        src="src/assets/background.webp"
-        alt="main page background img"
-      />
-      <img id="banner" src="src/assets/damn.svg" alt="banner" />
+      <section id="section__main">
+        <div class="sticky__wrapper">
+          <div class="doTest">
+            <img
+              class="main__background"
+              src="src/assets/background.webp"
+              alt="main__background"
+            />
+            <div id="scroll-down">
+              <div class="mouse"></div>
+              <p>scroll down slowly</p>
+            </div>
+          </div>
+        </div>
+        <div class="sticky__wrapper" id="d"></div>
+      </section>
     </main>
   </body>
 </html>
