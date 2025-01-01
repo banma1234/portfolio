@@ -51,7 +51,7 @@
 .title {
   width: 100%;
   text-align: center;
-  transform: rotateX(20deg) rotateY(-20deg);
+  transform: rotateX(20deg) rotateY(-30deg);
 }
 
 .smartphone {
@@ -76,7 +76,6 @@
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* 각 면의 그림자 추가 */
 }
 
-/* Front and Back */
 .front,
 .back {
   width: 300px;
@@ -95,7 +94,6 @@
   background: #11141c;
 }
 
-/* Left and Right */
 .left,
 .right {
   width: 30px;
@@ -109,7 +107,6 @@
   transform: rotateY(90deg) translateZ(285px);
 }
 
-/* Top and Bottom */
 .top,
 .bottom {
   width: 300px;
@@ -129,7 +126,6 @@
   height: 100%;
   transition: all 1s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-
 .carousel img {
   width: 300px;
   height: 100%;

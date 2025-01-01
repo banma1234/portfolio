@@ -8,6 +8,15 @@ body {
   height: 100%;
   color: #f2f2f2;
   background-color: #1d212a;
+  font-family: "NanumSquare";
+}
+@font-face {
+  font-family: "NanumSquare";
+  font-style: normal;
+  font-weight: 400;
+  src: local("NanumSquareOTF_acR")
+      url("../assets/fonts/NanumSquareOTF_acR.woff2") format("woff2"),
+    url("../assets/fonts/NanumSquareOTF_acR.woff") format("woff"); /* 3. woff2 형식을 지원하지 않는다면 woff형식 사용 */
 }
 
 main,
@@ -23,7 +32,6 @@ h3 {
   font-family: "Koulen";
   color: #ebf298;
 }
-
 @font-face {
   font-family: "Koulen";
   font-style: normal;
