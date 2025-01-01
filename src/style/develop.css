@@ -1,0 +1,146 @@
+#project__1,
+#project__2,
+#project__3 {
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  column-gap: 5.5rem;
+  height: 100vh;
+}
+
+#section__develop__1,
+#section__develop__2,
+#section__develop__3 {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  height: 400vh;
+}
+
+.damn {
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  height: 100vh;
+  opacity: 0.3;
+}
+
+.smartphone {
+  position: relative;
+  width: 300px;
+  height: 480px;
+  transform-style: preserve-3d;
+  transform: rotateX(20deg) rotateY(-20deg);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* 스마트폰 전체 그림자 */
+}
+
+.smartphone__wrapper {
+  margin-top: -50px;
+  position: relative;
+  width: 300px;
+  height: 520px;
+  perspective: 1000px;
+  z-index: 10;
+}
+.smartphone__wrapper:hover .smartphone {
+  animation: spin 1s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  transform: rotateX(20deg) rotateY(-20deg);
+}
+
+.smartphone {
+  position: relative;
+  width: 300px;
+  height: 480px;
+  transform-style: preserve-3d;
+  transform: rotateX(20deg) rotateY(-20deg);
+}
+
+@keyframes spin {
+  from {
+    transform: rotateX(-20deg) rotateY(-20deg);
+  }
+  to {
+    transform: rotateX(20deg) rotateY(340deg); /* 2회전 시계방향 */
+  }
+}
+
+.face {
+  position: absolute;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* 각 면의 그림자 추가 */
+}
+
+/* Front and Back */
+.front,
+.back {
+  width: 300px;
+  height: 480px;
+  background: #11141c;
+}
+.front {
+  transform: translateZ(15px);
+  background: #11141c;
+  border: 20px solid #11141c;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.back {
+  transform: translateZ(-15px);
+  background: #11141c;
+}
+
+/* Left and Right */
+.left,
+.right {
+  width: 30px;
+  height: 480px;
+  background: #11141c;
+}
+.left {
+  transform: rotateY(90deg) translateZ(-15px);
+}
+.right {
+  transform: rotateY(90deg) translateZ(285px);
+}
+
+/* Top and Bottom */
+.top,
+.bottom {
+  width: 300px;
+  height: 30px;
+  background-color: #11141c;
+}
+.top {
+  transform: rotateX(90deg) translateZ(15px);
+}
+.bottom {
+  transform: rotateX(90deg) translateZ(-465px);
+}
+
+.carousel {
+  display: flex;
+  width: 900px; /* 3개의 이미지 */
+  height: 100%;
+  transition: all 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.carousel img {
+  width: 300px;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.develop__form {
+  max-width: 40rem;
+}
+.develop__form p {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+}

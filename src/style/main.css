@@ -18,6 +18,7 @@
   height: 100vh;
   overflow: hidden;
 }
+
 .main__background {
   object-fit: cover;
   width: 100%;
@@ -36,18 +37,20 @@
   z-index: 100;
 
   p {
-    color: #f2f2f2;
-    font-weight: 700;
+    font-family: "Koulen";
+    background-color: rgb(255, 255, 255, 25%);
+    font-size: 1.2rem;
+    color: #1d212a;
     margin-top: 4rem;
   }
 }
 .mouse {
   position: absolute;
   left: 50%;
-  width: 32px;
-  height: 52px;
+  width: 36px;
+  height: 56px;
   margin-left: -15px;
-  border: 2px solid #f2f2f2;
+  border: 2.5px solid #1d212a;
   border-radius: 50px;
   box-sizing: border-box;
 }
@@ -56,10 +59,10 @@
   top: 10px;
   left: 50%;
   content: "";
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   margin-left: -3px;
-  background-color: #f2f2f2;
+  background-color: #1d212a;
   border-radius: 100%;
   -webkit-animation: scroll__down__effect 2s infinite;
   animation: scroll__down__effect 1.5s infinite;
