@@ -1,35 +1,25 @@
+import initializeObserver from "./intersectionObserver";
+import smoothScrollAction from "./smoothScrollAction";
+import handleSectionWatched from "./animation";
+
+let count = 0;
+const image = document.querySelector(".carousel");
+
+function changeImage(idx) {
+  image.style.transform = `translateX(-${300 * idx}px)`;
+}
+
+setInterval(() => {
+  count === 2 ? (count = 0) : count++;
+  changeImage(count);
+}, 3000);
+
+/**
+ * 문서 로드시 즉시 실행되는 스크립트. 다음과 같은 기능을 수행한다.
+ * - 부드러운 스크롤 애니메이션
+ * - 뷰포트 진입 감지 및 콜백 실행
+ */
 document.addEventListener("DOMContentLoaded", () => {
-  let currentScroll = 0; // 현재 스크롤 위치
-  let targetScroll = 0; // 목표 스크롤 위치
-  const scrollSpeed = 0.05; // 부드럽게 스크롤하는 속도
-  let debounceTimeout;
-
-  // 스크롤 이벤트로 목표 위치 업데이트
-  window.addEventListener(
-    "wheel",
-    (event) => {
-      event.preventDefault();
-      clearTimeout(debounceTimeout);
-      debounceTimeout = setTimeout(() => {
-        targetScroll += event.deltaY;
-        targetScroll = Math.max(
-          0,
-          Math.min(
-            targetScroll,
-            document.body.scrollHeight - window.innerHeight
-          )
-        );
-      }, 10);
-    },
-    { passive: false }
-  );
-
-  // 스크롤 애니메이션
-  function smoothScroll() {
-    currentScroll += (targetScroll - currentScroll) * scrollSpeed; // 부드럽게 목표로 이동
-    window.scrollTo(0, currentScroll); // 화면 스크롤
-    requestAnimationFrame(smoothScroll); // 재귀 호출
-  }
-
-  smoothScroll(); // 초기 호출
+  smoothScrollAction(); // 부드러운 스크롤
+  initializeObserver(handleSectionWatched); // 뷰포트 진입 감지
 });
