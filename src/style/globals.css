@@ -40,3 +40,7 @@ h3 {
     url("../assets/fonts/Koulen-Regular.woff2") format("woff2"),
     url("../assets/fonts/Koulen-Regular.woff") format("woff"); /* 3. woff2 형식을 지원하지 않는다면 woff형식 사용 */
 }
+
+strong {
+  color: #fff;
+}

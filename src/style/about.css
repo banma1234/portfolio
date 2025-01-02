@@ -1,9 +1,14 @@
 #section__about {
+  height: 200vh;
+  position: relative;
+}
+
+.about__container {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 4rem;
+  padding-top: 2rem;
   column-gap: 3rem;
 }
 

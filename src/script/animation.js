@@ -8,7 +8,7 @@ export default function handleSectionWatched(sectionId, isWatched) {
   switch (sectionId) {
     case "section__about":
       const [PROFILE, FORM] = document.querySelectorAll(
-        ".about__profile, .about__form",
+        ".about__profile, .about__form"
       );
 
       if (isWatched) {
@@ -20,5 +20,25 @@ export default function handleSectionWatched(sectionId, isWatched) {
         }, 500);
       }
       break;
+
+    // case "section__develop__1":
+    //   const SMARTPHONE = document.querySelectorAll(".smartphone");
+    //   const keyframes = [
+    //     { transform: "rotateX(20deg) rotateY(-20deg)" },
+    //     { transform: "rotateX(20deg) rotateY(340deg)" },
+    //   ];
+    //   const options = {
+    //     duration: 1000,
+    //     easing: "cubic-bezier(0.25, 0.8, 0.25, 1)",
+    //     fill: "forwards",
+    //   };
+
+    //   if (isWatched) {
+    //     SMARTPHONE.forEach((item) => {
+    //       item.animate(keyframes, options);
+    //     });
+    //   }
+
+    //   break;
   }
 }
