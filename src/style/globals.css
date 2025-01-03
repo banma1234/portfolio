@@ -41,6 +41,85 @@ h3 {
     url("../assets/fonts/Koulen-Regular.woff") format("woff"); /* 3. woff2 형식을 지원하지 않는다면 woff형식 사용 */
 }
 
+button {
+  cursor: pointer;
+  color: #ebf298;
+  padding: 0.5rem 1.5rem;
+  border: 2px solid #ebf298;
+  border-radius: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 strong {
   color: #fff;
+}
+
+.scrollLock {
+  overflow: hidden;
+}
+
+#target__img {
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 1;
+}
+.modal.activate {
+  display: flex;
+  justify-content: center;
+  z-index: 9999;
+  background-color: rgb(0, 0, 0, 60%);
+}
+#modal_body img {
+  margin: 0 auto;
+  height: 520px;
+}
+.btn_container_modal {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  background-color: #2f2f2f;
+}
+#modal_close {
+  color: #fff;
+  display: flex;
+  cursor: pointer;
+  margin-right: 5px;
+  z-index: 10000;
+}
+#modal_body {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 40px 1fr 40px;
+  top: 50%;
+  margin: 0 auto;
+  width: 880px;
+  z-index: 999999;
+  border-radius: 10px;
+  transform: translateY(-50%);
+  background-color: #0e0e0e;
+  box-shadow: 0 10px 14px rgb(0 0 0 / 40%);
+  animation: modal_open 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+  overflow: hidden;
+}
+@keyframes modal_open {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 600px;
+  }
 }

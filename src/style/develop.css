@@ -46,6 +46,17 @@
 .smartphone__wrapper:hover .smartphone {
   animation: spin 1s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
 }
+.smartphone__wrapper:hover .carousel img {
+  transition: 1s all;
+  filter: brightness(70%) blur(3px);
+}
+.smartphone__wrapper:hover .smartphone__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  z-index: 10000;
+}
 
 .title {
   width: 100%;
@@ -99,6 +110,17 @@
   margin-top: 410px;
   z-index: 20;
 }
+.smartphone__button {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.smartphone__button button {
+  font-size: 1.2rem;
+  background-color: #1c1f2b;
+  font-family: "Koulen";
+}
 
 .left,
 .right {
@@ -136,12 +158,14 @@
   width: 260px;
   height: 100%;
   object-fit: cover;
-  cursor: pointer;
 }
 
 .develop__form {
+  opacity: 0;
   z-index: 10;
   max-width: 40rem;
+  transition: all 1s;
+  margin-left: 3rem;
 }
 .develop__form li {
   color: #e4e4e4;

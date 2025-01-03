@@ -1,14 +1,14 @@
+const SECTION = document.querySelectorAll("#main > section");
+SECTION.forEach((section, index) => (section.dataset.index = index));
+
 /**
  * 각 section의 뷰포트 진입 감지하는 함수.
  * 뷰포트 내에 진입시 콜백 `onSectionWatched` 실행
  * @param {void} onSectionWatched
  */
-export default function initializeObserver(onSectionWatched) {
-  const SECTION = document.querySelectorAll("#main > section");
-  // 각 section에 index번호 부여
-  SECTION.forEach((section, index) => (section.dataset.index = index));
-
+export function initializeObserver(onSectionWatched) {
   let watchedIndex = 0; // 현재 감지중인 section의 index 번호
+
   const observer = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
@@ -39,4 +39,15 @@ export default function initializeObserver(onSectionWatched) {
 
   // 각 section 감지 수행
   SECTION.forEach(section => observer.observe(section));
+}
+
+export function scrollToSection() {
+  const MENU = document.querySelectorAll("#nav__menu > li");
+
+  MENU.forEach((item, i) => {
+    item.addEventListener("click", () => {
+      console.log(SECTION[i + 1]);
+      SECTION[i + 1].scrollIntoView({ behavior: "smooth" });
+    });
+  });
 }
