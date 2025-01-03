@@ -1,6 +1,5 @@
 #project__1,
-#project__2,
-#project__3 {
+#project__2 {
   position: sticky;
   display: flex;
   justify-content: center;
@@ -10,9 +9,7 @@
   height: 100vh;
 }
 
-#section__develop__1,
-#section__develop__2,
-#section__develop__3 {
+#section__develop > article {
   z-index: 1;
   position: relative;
   width: 100%;

@@ -1,5 +1,5 @@
 import { initializeObserver, scrollToSection } from "./intersectionObserver";
-import smoothScrollAction from "./smoothScrollAction";
+import { smoothScrollAction } from "./smoothScrollAction";
 import handleSectionWatched from "./animation";
 
 /**
@@ -36,7 +36,6 @@ const modalBody = document.querySelector("#modal_body > img");
 const modalClose = document.getElementById("modal_close");
 
 const IMAGES = document.querySelectorAll("#target__img");
-console.log(IMAGES);
 
 IMAGES.forEach(img => {
   img.addEventListener("click", () => {

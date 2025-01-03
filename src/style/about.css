@@ -1,4 +1,4 @@
-#section__about {
+#section__about > article {
   height: 200vh;
   position: relative;
 }

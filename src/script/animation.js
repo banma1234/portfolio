@@ -1,12 +1,12 @@
 /**
  * 뷰포트 내에 진입한 `section`의 각 컴포넌트에 대하여 지정된 애니메이션 수행.
- * @param {string} sectionId
+ * @param {string} articleId
  * @param {boolean} isWatched
  */
-export default function handleSectionWatched(sectionId, isWatched) {
-  // `sectionId`의 값에 따라 분기
-  switch (sectionId) {
-    case "section__about":
+export default function handleSectionWatched(articleId, isWatched) {
+  // `articleId`의 값에 따라 분기
+  switch (articleId) {
+    case "article__about":
       const [PROFILE, FORM] = document.querySelectorAll(
         ".about__profile, .about__form",
       );
@@ -21,7 +21,7 @@ export default function handleSectionWatched(sectionId, isWatched) {
       }
       break;
 
-    case "section__develop__1":
+    case "article__develop__1":
       const INFO_1 = document.querySelector("#project__1 > .develop__form");
 
       if (isWatched) {
@@ -30,7 +30,7 @@ export default function handleSectionWatched(sectionId, isWatched) {
       }
       break;
 
-    case "section__develop__2":
+    case "article__develop__2":
       const INFO_2 = document.querySelector("#project__2 > .develop__form");
 
       if (isWatched) {
@@ -38,5 +38,8 @@ export default function handleSectionWatched(sectionId, isWatched) {
         INFO_2.style.transform = "translateX(-3rem)";
       }
       break;
+
+    default:
+      return;
   }
 }

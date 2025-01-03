@@ -1,4 +1,4 @@
-#section__main {
+#section__main > article {
   height: 230vh;
   position: relative;
   z-index: 1;
@@ -8,15 +8,6 @@
   top: 0;
   position: sticky;
   height: 100vh;
-}
-
-.doTest {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
 }
 
 .main__background {

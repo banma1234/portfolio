@@ -1,5 +1,15 @@
-const SECTION = document.querySelectorAll("#main > section");
-SECTION.forEach((section, index) => (section.dataset.index = index));
+import { programmaticScroll } from "./smoothScrollAction";
+
+const SECTION = document.querySelectorAll(".viewport");
+const ARTICLE = document.querySelectorAll("article");
+const observedSection = new Map();
+
+ARTICLE.forEach((article, index) => (article.dataset.index = index));
+SECTION.forEach((section, index) => {
+  section.dataset.index = index;
+  observedSection.set(section.id, false);
+});
+console.log(observedSection);
 
 /**
  * 각 section의 뷰포트 진입 감지하는 함수.
@@ -17,14 +27,18 @@ export function initializeObserver(onSectionWatched) {
 
         if (entry.isIntersecting) {
           watchedIndex = index;
+          ARTICLE[watchedIndex].classList.add("watched");
           SECTION[watchedIndex].classList.add("watched");
+          observedSection.set(SECTION[watchedIndex].id, true);
 
           // 콜백 호출
           if (onSectionWatched) {
             onSectionWatched(entry.target.id, true);
           }
         } else if (entry.boundingClientRect.y > 100) {
+          ARTICLE[watchedIndex].classList.remove("watched");
           SECTION[watchedIndex].classList.remove("watched");
+          observedSection.set(SECTION[watchedIndex].id, false);
           watchedIndex = index - 1;
 
           // 콜백 호출
@@ -39,15 +53,15 @@ export function initializeObserver(onSectionWatched) {
 
   // 각 section 감지 수행
   SECTION.forEach(section => observer.observe(section));
+  ARTICLE.forEach(article => observer.observe(article));
 }
 
 export function scrollToSection() {
   const MENU = document.querySelectorAll("#nav__menu > li");
 
   MENU.forEach((item, i) => {
-    item.addEventListener("click", () => {
-      console.log(SECTION[i + 1]);
-      SECTION[i + 1].scrollIntoView({ behavior: "smooth" });
+    item.addEventListener("click", async () => {
+      await programmaticScroll(SECTION[i + 1], observedSection);
     });
   });
 }
