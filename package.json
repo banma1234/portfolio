@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "description": "박범수의 개발 & 디자인 포트폴리오 입니다.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
