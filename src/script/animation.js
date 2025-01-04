@@ -39,6 +39,15 @@ export default function handleSectionWatched(articleId, isWatched) {
       }
       break;
 
+    case "article__design":
+      const INFO_3 = document.querySelector(".design__form");
+
+      if (isWatched) {
+        INFO_3.style.opacity = "1";
+        INFO_3.style.transform = "translateY(-3rem)";
+      }
+      break;
+
     default:
       return;
   }

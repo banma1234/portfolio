@@ -1,0 +1,87 @@
+#section__design > article {
+  z-index: 1;
+  position: relative;
+  height: 200vh;
+}
+
+#viewport__design {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+/* 슬라이드 */
+
+.belt {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 5rem;
+  overflow: hidden;
+  border-top: 0.5rem solid #ebf298;
+  border-bottom: 0.5rem solid #ebf298;
+}
+.belt__slow {
+  display: flex;
+  overflow: hidden;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.belt__slow .belt__slow__container,
+.belt .belt__container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.belt .belt__container.original {
+  animation: 30s linear 0s infinite normal forwards running slide01;
+}
+.belt__slow .belt__slow__container.original {
+  animation: 50s linear 0s infinite normal forwards running slide01;
+}
+.belt .belt__container.clone {
+  animation: 30s linear 0s infinite normal none running slide02;
+}
+.belt__slow .belt__slow__container.clone {
+  animation: 50s linear 0s infinite normal none running slide02;
+}
+.belt .belt__container h2 {
+  margin: 0 1.5rem;
+}
+@keyframes slide01 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  50.01% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slide02 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+.card {
+  width: 260px;
+  height: 260px;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin: 2rem 1rem;
+}
+.card > img {
+  width: 100%;
+  height: 100%;
+}

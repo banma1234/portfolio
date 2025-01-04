@@ -53,3 +53,22 @@ modalClose.addEventListener("click", () => {
   body.classList.remove("scrollLock");
 });
 //#endregion
+
+const belt = document.querySelector(".belt__container");
+const belt__slow = document.querySelectorAll(".belt__slow__container");
+
+const clone = belt.cloneNode(true);
+belt__slow.forEach((belt, i) => {
+  const clone_2 = belt.cloneNode(true);
+  document.querySelectorAll(".belt__slow")[i].appendChild(clone_2);
+  document.querySelectorAll(".belt__slow__container").offsetWidth + "px";
+
+  belt.classList.add("original");
+  clone_2.classList.add("clone");
+});
+
+document.querySelector(".belt").appendChild(clone);
+document.querySelector(".belt__container").offsetWidth + "px";
+
+belt.classList.add("original");
+clone.classList.add("clone");
