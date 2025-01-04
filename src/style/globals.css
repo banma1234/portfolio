@@ -19,6 +19,21 @@ body {
     url("../assets/fonts/NanumSquareOTF_acR.woff") format("woff"); /* 3. woff2 형식을 지원하지 않는다면 woff형식 사용 */
 }
 
+::-webkit-scrollbar {
+  width: 0.4rem;
+  height: 0.4rem;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #f2f2f2;
+  border-radius: 0.8rem;
+}
+::-webkit-scrollbar-track {
+  background: none;
+}
+::-webkit-scrollbar-button {
+  display: none;
+}
+
 main,
 section {
   display: block;
@@ -56,6 +71,10 @@ a {
 
 strong {
   color: #fff;
+}
+
+hr {
+  border: 1px solid #2f2f2f;
 }
 
 .scrollLock {
@@ -98,7 +117,7 @@ strong {
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  background-color: #2f2f2f;
+  background-color: #202020;
 }
 #modal_close {
   color: #fff;

@@ -20,6 +20,10 @@
   transition: all 1s;
   transform: translateY(0);
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
 }
 
 .about__form {
@@ -31,9 +35,16 @@
 
   h2 {
     text-align: right;
+    @media screen and (max-width: 799px) {
+      font-size: 2.2rem;
+    }
   }
   p {
     font-size: 1.2rem;
     margin-bottom: 3rem;
+  }
+
+  @media screen and (max-width: 799px) {
+    padding: 0 1rem;
   }
 }

@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   smoothScrollAction(); // 부드러운 스크롤
   initializeObserver(handleSectionWatched); // 뷰포트 진입 감지
   scrollToSection();
+  setTargetImage();
 });
 
 // #region 캐러셀 제어 구문
@@ -18,7 +19,7 @@ let count = 0;
 const CAROUSEL = document.querySelectorAll(".carousel");
 
 function changeImage(idx) {
-  CAROUSEL.forEach(item => {
+  CAROUSEL.forEach((item) => {
     item.style.transform = `translateX(-${260 * idx}px)`;
   });
 }
@@ -35,17 +36,19 @@ const modal = document.querySelector(".modal");
 const modalBody = document.querySelector("#modal_body > img");
 const modalClose = document.getElementById("modal_close");
 
-const IMAGES = document.querySelectorAll("#target__img");
+function setTargetImage() {
+  const IMAGES = document.querySelectorAll("#target__img");
 
-IMAGES.forEach(img => {
-  img.addEventListener("click", () => {
-    body.classList.add("scrollLock");
-    modal.classList.add("activate");
-    setTimeout(() => {
-      modalBody.src = img.src;
-    }, 600);
+  IMAGES.forEach((img) => {
+    img.addEventListener("click", () => {
+      body.classList.add("scrollLock");
+      modal.classList.add("activate");
+      setTimeout(() => {
+        modalBody.src = img.src;
+      }, 600);
+    });
   });
-});
+}
 
 modalClose.addEventListener("click", () => {
   modalBody.src = "";
@@ -61,7 +64,7 @@ const clone = belt.cloneNode(true);
 belt__slow.forEach((belt, i) => {
   const clone_2 = belt.cloneNode(true);
   document.querySelectorAll(".belt__slow")[i].appendChild(clone_2);
-  document.querySelectorAll(".belt__slow__container").offsetWidth + "px";
+  document.querySelectorAll(".belt__slow__container")[i].offsetWidth + "px";
 
   belt.classList.add("original");
   clone_2.classList.add("clone");

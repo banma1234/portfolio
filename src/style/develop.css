@@ -19,7 +19,7 @@
 .damn {
   position: absolute;
   z-index: 5;
-  width: 100%;
+  min-width: 100%;
   height: 100vh;
   opacity: 0.3;
 }
@@ -163,6 +163,13 @@
   max-width: 40rem;
   transition: all 1s;
   margin-left: 3rem;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 0.8rem;
+  }
+  @media screen and (max-width: 799px) {
+    display: none;
+  }
 }
 .develop__form li {
   color: #e4e4e4;
