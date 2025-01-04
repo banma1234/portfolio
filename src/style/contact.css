@@ -1,0 +1,50 @@
+#section__contact > article {
+  height: 100vh;
+}
+
+#viewport__contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.contact__link {
+  display: flex;
+  column-gap: 1rem;
+  margin-top: 2rem;
+
+  li {
+    cursor: pointer;
+    list-style: none;
+    padding: 0.6rem 0.6rem 0.3rem 0.6rem;
+    border-radius: 100%;
+    border: 2px solid #84909c;
+    color: #84909c;
+  }
+  li:hover {
+    transition: all 0.3s;
+    background-color: black;
+
+    .tooltip {
+      display: block;
+      position: absolute;
+      margin-top: 0.6rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 5rem;
+      font-weight: 500;
+      font-size: 0.8rem;
+      background-color: #84909c;
+      color: #fff;
+    }
+  }
+  li::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    margin: 1.5rem 0.1rem 0 0;
+    border-radius: 100%;
+    background-color: #29c941;
+  }
+}

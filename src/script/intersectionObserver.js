@@ -1,6 +1,6 @@
 import { programmaticScroll } from "./smoothScrollAction";
 
-const SECTION = document.querySelectorAll(".viewport");
+const SECTION = document.querySelectorAll("section");
 const ARTICLE = document.querySelectorAll("article");
 const observedSection = new Map();
 
@@ -20,8 +20,8 @@ export function initializeObserver(onSectionWatched) {
   let watchedIndex = 0; // 현재 감지중인 section의 index 번호
 
   const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
+    (entries) => {
+      entries.forEach((entry) => {
         // entry.target.dataset.index의 return값은 `string`이다
         const index = Number(entry.target.dataset.index);
 
@@ -48,12 +48,12 @@ export function initializeObserver(onSectionWatched) {
         }
       });
     },
-    { threshold: 0.5 },
+    { threshold: 0.5 }
   );
 
   // 각 section 감지 수행
-  SECTION.forEach(section => observer.observe(section));
-  ARTICLE.forEach(article => observer.observe(article));
+  SECTION.forEach((section) => observer.observe(section));
+  ARTICLE.forEach((article) => observer.observe(article));
 }
 
 export function scrollToSection() {
