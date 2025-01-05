@@ -19,7 +19,7 @@ let count = 0;
 const CAROUSEL = document.querySelectorAll(".carousel");
 
 function changeImage(idx) {
-  CAROUSEL.forEach((item) => {
+  CAROUSEL.forEach(item => {
     item.style.transform = `translateX(-${260 * idx}px)`;
   });
 }
@@ -39,7 +39,7 @@ const modalClose = document.getElementById("modal_close");
 function setTargetImage() {
   const IMAGES = document.querySelectorAll("#target__img");
 
-  IMAGES.forEach((img) => {
+  IMAGES.forEach(img => {
     img.addEventListener("click", () => {
       body.classList.add("scrollLock");
       modal.classList.add("activate");
@@ -58,20 +58,20 @@ modalClose.addEventListener("click", () => {
 //#endregion
 
 const belt = document.querySelector(".belt__container");
-const belt__slow = document.querySelectorAll(".belt__slow__container");
 
 const clone = belt.cloneNode(true);
-belt__slow.forEach((belt, i) => {
-  const clone_2 = belt.cloneNode(true);
-  document.querySelectorAll(".belt__slow")[i].appendChild(clone_2);
-  document.querySelectorAll(".belt__slow__container")[i].offsetWidth + "px";
-
-  belt.classList.add("original");
-  clone_2.classList.add("clone");
-});
 
 document.querySelector(".belt").appendChild(clone);
 document.querySelector(".belt__container").offsetWidth + "px";
 
 belt.classList.add("original");
 clone.classList.add("clone");
+
+const belt__slow = document.querySelector(".belt__slow__container");
+const clone_2 = belt__slow.cloneNode(true);
+
+document.querySelector(".belt__slow").appendChild(clone_2);
+document.querySelector(".belt__slow__container").offsetWidth + "px";
+
+belt__slow.classList.add("original");
+clone_2.classList.add("clone");

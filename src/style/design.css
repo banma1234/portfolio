@@ -24,10 +24,9 @@
 }
 .belt__slow {
   display: flex;
-  overflow: hidden;
-  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  width: 100%;
+  overflow: hidden;
 }
 .belt__slow .belt__slow__container,
 .belt .belt__container {
@@ -38,18 +37,21 @@
 .belt .belt__container.original {
   animation: 25s linear 0s infinite normal forwards running slide01;
 }
-.belt__slow .belt__slow__container.original {
-  animation: 50s linear 0s infinite normal forwards running slide01;
-}
 .belt .belt__container.clone {
   animation: 25s linear 0s infinite normal none running slide02;
+}
+
+.belt .belt__container h2 {
+  margin: 0 1.5rem;
+}
+
+.belt__slow .belt__slow__container.original {
+  animation: 50s linear 0s infinite normal forwards running slide01;
 }
 .belt__slow .belt__slow__container.clone {
   animation: 50s linear 0s infinite normal none running slide02;
 }
-.belt .belt__container h2 {
-  margin: 0 1.5rem;
-}
+
 @keyframes slide01 {
   0% {
     transform: translateX(0);
