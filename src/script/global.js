@@ -57,8 +57,8 @@ modalClose.addEventListener("click", () => {
 });
 //#endregion
 
+// #region 디자인 벨트 구문
 const belt = document.querySelector(".belt__container");
-
 const clone = belt.cloneNode(true);
 
 document.querySelector(".belt").appendChild(clone);
@@ -75,3 +75,29 @@ document.querySelector(".belt__slow__container").offsetWidth + "px";
 
 belt__slow.classList.add("original");
 clone_2.classList.add("clone");
+//#endregion
+
+// #region 인트로 구문
+const intro = document.getElementById("intro");
+const info = document.querySelector(".intro__info");
+const list = document.querySelector(".intro__list > ul");
+const delay = time => {
+  return new Promise(res => setTimeout(res, time));
+};
+
+async function animateByDelay() {
+  for (let i = 0; i < 3; i++) {
+    list.style.transform = `translateY(${2.8 * i}rem)`;
+    await delay(1000);
+  }
+}
+
+setTimeout(() => {
+  info.style.opacity = "1";
+  body.classList.add("scrollLock");
+
+  animateByDelay().then(() => {
+    body.classList.remove("scrollLock");
+    intro.style.transform = `translateY(-100%)`;
+  });
+}, 1000);
