@@ -2,10 +2,12 @@
  * 뷰포트 내에 진입한 `section`의 각 컴포넌트에 대하여 지정된 애니메이션 수행.
  * @param {string} articleId
  * @param {boolean} isWatched
+ * @type {void}
  */
 export default function handleSectionWatched(articleId, isWatched) {
   // `articleId`의 값에 따라 분기
   switch (articleId) {
+    // 뷰포트 `about`
     case "article__about":
       const [PROFILE, FORM] = document.querySelectorAll(
         ".about__profile, .about__form",
@@ -21,6 +23,7 @@ export default function handleSectionWatched(articleId, isWatched) {
       }
       break;
 
+    // 뷰포트 `develop__1`
     case "article__develop__1":
       const INFO_1 = document.querySelector("#project__1 > .develop__form");
 
@@ -30,6 +33,7 @@ export default function handleSectionWatched(articleId, isWatched) {
       }
       break;
 
+    // 뷰포트 `develop__2`
     case "article__develop__2":
       const INFO_2 = document.querySelector("#project__2 > .develop__form");
 
@@ -39,6 +43,7 @@ export default function handleSectionWatched(articleId, isWatched) {
       }
       break;
 
+    // 뷰포트 `design`
     case "article__design":
       const INFO_3 = document.querySelector(".design__form");
 
