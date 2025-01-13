@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /** global.js 내에서 전역적으로 사용되는 `body` element. */
-const body = document.getElementsByTagName("body")[0];
+const BODY = document.getElementsByTagName("body")[0];
 
 /**
  * `프로젝트` 페이지의 `캐러셀`을 제어하는 함수.
@@ -33,7 +33,7 @@ function handleCarrousel() {
   const CAROUSEL = document.querySelectorAll(".carousel");
 
   function changeImage(index) {
-    CAROUSEL.forEach(item => {
+    CAROUSEL.forEach((item) => {
       item.style.transform = `translateX(-${260 * index}px)`;
     });
   }
@@ -55,9 +55,9 @@ function handleModalPage() {
   const IMAGES = document.querySelectorAll("#target__img");
 
   // `IMAGES`의 자식 element에 모달창 여는 이벤트 등록
-  IMAGES.forEach(img => {
+  IMAGES.forEach((img) => {
     img.addEventListener("click", () => {
-      body.classList.add("scrollLock");
+      BODY.classList.add("scrollLock");
       modal.classList.add("activate");
       setTimeout(() => {
         modalBody.src = img.src;
@@ -69,7 +69,7 @@ function handleModalPage() {
   modalClose.addEventListener("click", () => {
     modalBody.src = "";
     modal.classList.remove("activate");
-    body.classList.remove("scrollLock");
+    BODY.classList.remove("scrollLock");
   });
 }
 
@@ -115,7 +115,7 @@ async function showIntro() {
    * @returns {Promie<void>}
    */
   function delay(time) {
-    return new Promise(res => setTimeout(res, time));
+    return new Promise((res) => setTimeout(res, time));
   }
 
   // 1초에 한번씩 총 3회 애니메이션 수행
@@ -130,13 +130,13 @@ async function showIntro() {
    * - 문서 로드 후 처음 1초간 초기 인트로 내용 출력
    * - 이후 `animateByDelay()` 실행, 함수 종료시 스크롤락 해제
    */
-  await new Promise(resolve => {
+  await new Promise((resolve) => {
     setTimeout(() => {
       info.style.opacity = "1";
-      body.classList.add("scrollLock");
+      BODY.classList.add("scrollLock");
 
       animateByDelay().then(() => {
-        body.classList.remove("scrollLock");
+        BODY.classList.remove("scrollLock");
         intro.style.transform = `translateY(-100%)`;
 
         resolve();

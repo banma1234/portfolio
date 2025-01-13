@@ -10,7 +10,7 @@ export default function handleSectionWatched(articleId, isWatched) {
     // 뷰포트 `about`
     case "article__about":
       const [PROFILE, FORM] = document.querySelectorAll(
-        ".about__profile, .about__form",
+        ".about__profile, .about__form"
       );
 
       if (isWatched) {
@@ -25,31 +25,31 @@ export default function handleSectionWatched(articleId, isWatched) {
 
     // 뷰포트 `develop__1`
     case "article__develop__1":
-      const INFO_1 = document.querySelector("#project__1 > .develop__form");
+      const DEVELOP_1 = document.querySelector("#project__1 > .develop__form");
 
       if (isWatched) {
-        INFO_1.style.opacity = "1";
-        INFO_1.style.transform = "translateX(-3rem)";
+        DEVELOP_1.style.opacity = "1";
+        DEVELOP_1.style.transform = "translateX(-3rem)";
       }
       break;
 
     // 뷰포트 `develop__2`
     case "article__develop__2":
-      const INFO_2 = document.querySelector("#project__2 > .develop__form");
+      const DEVELOP_2 = document.querySelector("#project__2 > .develop__form");
 
       if (isWatched) {
-        INFO_2.style.opacity = "1";
-        INFO_2.style.transform = "translateX(-3rem)";
+        DEVELOP_2.style.opacity = "1";
+        DEVELOP_2.style.transform = "translateX(-3rem)";
       }
       break;
 
     // 뷰포트 `design`
     case "article__design":
-      const INFO_3 = document.querySelector(".design__form");
+      const DESIGN = document.querySelector(".design__form");
 
       if (isWatched) {
-        INFO_3.style.opacity = "1";
-        INFO_3.style.transform = "translateY(-3rem)";
+        DESIGN.style.opacity = "1";
+        DESIGN.style.transform = "translateY(-3rem)";
       }
       break;
 
