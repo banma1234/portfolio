@@ -2,10 +2,10 @@ import { initializeObserver, scrollToSection } from "./intersectionObserver";
 import { smoothScrollAction } from "./smoothScrollAction";
 import {
   handleSectionWatched,
+  handleNavBar,
   animateDesignBelt,
   showIntro,
 } from "./animation";
-import { SVG } from "./customComponents";
 
 /**
  * 문서 로드시 즉시 실행되는 스크립트. 다음과 같은 기능을 수행한다.
@@ -74,32 +74,5 @@ function handleModalPage() {
     modalBody.src = "";
     modal.classList.remove("activate");
     BODY.classList.remove("scrollLock");
-  });
-}
-
-function handleNavBar() {
-  const menu = document.getElementById("nav__menu");
-  const button = document.getElementById("nav__menu__button");
-  const buttonIcon = document.querySelector("#nav__menu__button > svg");
-  let isClick = false;
-
-  button.addEventListener("click", () => {
-    isClick = !isClick;
-
-    if (isClick) {
-      menu.classList.add("__opened");
-      buttonIcon.innerHTML = `${SVG.cancel}`;
-
-      setTimeout(() => {
-        menu.style.transform = "translateX(0%)";
-      }, 300);
-    } else {
-      buttonIcon.innerHTML = `${SVG.menu}`;
-      menu.style.transform = "translateX(100%)";
-
-      setTimeout(() => {
-        menu.classList.remove("__opened");
-      }, 300);
-    }
   });
 }

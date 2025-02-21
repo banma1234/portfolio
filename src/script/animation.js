@@ -1,3 +1,5 @@
+import { SVG } from "./customComponents";
+
 /**
  * 뷰포트 내에 진입한 `section`의 각 컴포넌트에 대하여 지정된 애니메이션 수행.
  * @param {string} articleId
@@ -128,5 +130,37 @@ export async function showIntro() {
         resolve();
       });
     }, 55);
+  });
+}
+
+/**
+ * 네비게이션 바의 반응형 애니메이션 제어하는 함수.
+ */
+export function handleNavBar() {
+  const menu = document.getElementById("nav__menu");
+  const button = document.getElementById("nav__menu__button");
+  const buttonIcon = document.querySelector("#nav__menu__button > svg");
+  let isClick = false;
+
+  button.addEventListener("click", () => {
+    isClick = !isClick;
+
+    if (isClick) {
+      menu.classList.add("__opened");
+      menu.style.transform = "translateX(100%)";
+      buttonIcon.innerHTML = `${SVG.cancel}`;
+
+      setTimeout(() => {
+        menu.style.transform = "translateX(0%)";
+      }, 300);
+    } else {
+      menu.style.transform = "translateX(100%)";
+      buttonIcon.innerHTML = `${SVG.menu}`;
+
+      setTimeout(() => {
+        menu.classList.remove("__opened");
+        menu.style.transform = "translateX(0%)";
+      }, 300);
+    }
   });
 }
