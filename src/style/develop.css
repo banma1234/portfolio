@@ -30,7 +30,7 @@
   height: 480px;
   transform-style: preserve-3d;
   transform: rotateX(20deg) rotateY(-20deg);
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* 스마트폰 전체 그림자 */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
 }
 .smartphone__wrapper {
   margin-top: -50px;
@@ -74,13 +74,13 @@
     transform: rotateX(20deg) rotateY(-20deg);
   }
   to {
-    transform: rotateX(20deg) rotateY(340deg); /* 2회전 시계방향 */
+    transform: rotateX(20deg) rotateY(340deg);
   }
 }
 
 .face {
   position: absolute;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* 각 면의 그림자 추가 */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .front,
@@ -183,7 +183,7 @@
   justify-content: left;
   column-gap: 1rem;
 }
-.hashtag__wrapper tag {
+tag {
   flex-wrap: wrap;
   color: #ebf298;
   border: 2px solid #ebf298;
