@@ -1,0 +1,54 @@
+#section__opensource > article {
+  z-index: 1;
+  position: relative;
+  height: 150vh;
+}
+
+#viewport__opensource {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150vh;
+}
+
+.opensource__item {
+  list-style: none;
+  border-top: 1px solid #5b5b5b;
+  border-bottom: 1px solid #5b5b5b;
+  font-size: 1.1rem;
+  padding: 2rem;
+  width: 90%;
+}
+.opensource__item:hover {
+  transition: all 0.3s;
+  background-color: #404040;
+}
+.opensource__item > a {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1.5rem;
+  justify-content: flex-start;
+  align-items: center;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 1rem;
+  }
+  @media screen and (max-width: 799px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.opensource__item > a > span {
+  color: #c6c6c6;
+  font-size: 0.9rem;
+}
+
+.opensource__item__title {
+  font-size: 1.8rem;
+  min-width: 10rem;
+  padding-right: 2rem;
+
+  @media screen and (max-width: 799px) {
+    margin: 0;
+  }
+}
