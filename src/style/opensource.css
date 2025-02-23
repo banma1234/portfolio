@@ -20,8 +20,7 @@
   width: 90%;
 }
 .opensource__item:hover {
-  transition: all 0.3s;
-  background-color: #404040;
+  background: linear-gradient(90deg, #404040, #1d212a);
 }
 .opensource__item > a {
   display: flex;
