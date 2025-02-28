@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="src/style/about.css" />
     <link rel="stylesheet" href="src/style/develop.css" />
     <link rel="stylesheet" href="src/style/design.css" />
+    <link rel="stylesheet" href="src/style/opensource.css" />
     <link rel="stylesheet" href="src/style/contact.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -50,8 +51,15 @@
           <li>about</li>
           <li>develop</li>
           <li>design</li>
+          <li>opensource</li>
           <li>contact</li>
         </menu>
+        <custom-svg
+          id="nav__menu__button"
+          title="menu"
+          size="1.6rem"
+          className="hello"
+        />
       </nav>
       <img class="banner" src="src/assets/images/banner.svg" alt="banner" />
     </header>
@@ -318,6 +326,79 @@
           </div>
         </article>
       </section>
+      <section id="section__opensource">
+        <article id="article__opensource">
+          <div id="viewport__opensource" class="viewport">
+            <ul id="opensource__container">
+              <li class="opensource__item">
+                <a
+                  target="_blank"
+                  href="https://github.com/yorkie-team/yorkie-js-sdk/pull/637"
+                >
+                  <span>01.</span>
+                  <h3 class="opensource__item__title">feature</h3>
+                  <div>
+                    <p>
+                      튜토리얼 목적의 예시 프로그램을 작성하였습니다.
+                      <strong>Next.js</strong> 환경에서
+                      <strong>Yorkie</strong>를 활용한 동시편집을 구현하였으며
+                      홈페이지에서 시연이 가능하도록 배포환경을 조성하였습니다.
+                    </p>
+                  </div>
+                </a>
+              </li>
+              <li class="opensource__item">
+                <a
+                  target="_blank"
+                  href="https://github.com/yorkie-team/yorkie-team.github.io/pull/110"
+                >
+                  <span>02.</span>
+                  <h3 class="opensource__item__title">feature</h3>
+                  <div>
+                    <p>
+                      타 기여자 작업물 <strong>simultaneous-cursors</strong>의
+                      배포환경을 조성하고 대표 홈페이지에 추가하였습니다.
+                    </p>
+                  </div>
+                </a>
+              </li>
+              <li class="opensource__item">
+                <a
+                  target="_blank"
+                  href="https://github.com/yorkie-team/yorkie-js-sdk/pull/683"
+                >
+                  <span>03.</span>
+                  <h3 class="opensource__item__title">documentation</h3>
+                  <div>
+                    <p>
+                      타 기여자 작업물 <strong>simultaneous-cursors</strong>의
+                      구동절차를 <strong>문서화</strong>하고 썸네일을
+                      작성하였습니다.
+                    </p>
+                  </div>
+                </a>
+              </li>
+              <li class="opensource__item">
+                <a
+                  target="_blank"
+                  href="https://github.com/yorkie-team/yorkie-team.github.io/issues/96"
+                >
+                  <span>04.</span>
+                  <h3 class="opensource__item__title">suggestion</h3>
+                  <div>
+                    <p>
+                      <strong>Yorkie</strong> 홈페이지의 구성 모듈을
+                      업데이트하고 <strong>Next.js</strong> 버전 업데이트에 따른
+                      page router => app router로의 <strong>migration</strong>을
+                      제안하였습니다.
+                    </p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
       <section id="section__contact">
         <article id="article__contact">
           <div class="sticky__wrapper">
@@ -370,10 +451,10 @@
         </div>
       </div>
     </main>
-    <script type="module" src="src/script/global.js"></script>
     <script type="module" src="src/script/animation.js"></script>
     <script type="module" src="src/script/smoothScrollAction.js"></script>
     <script type="module" src="src/script/intersectionObserver.js"></script>
-    <script type="module" src="src/script/components.js"></script>
+    <script type="module" src="src/script/customComponents.js"></script>
+    <script type="module" src="src/script/global.js"></script>
   </body>
 </html>
