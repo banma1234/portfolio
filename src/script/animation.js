@@ -110,7 +110,7 @@ export async function showIntro() {
   async function animateByDelay() {
     for (let i = 0; i < 3; i++) {
       list.style.transform = `translateY(${2.8 * i}rem)`;
-      await delay(55);
+      await delay(1000);
     }
   }
 
