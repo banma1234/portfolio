@@ -76,5 +76,10 @@ export function scrollToSection() {
     item.addEventListener("click", async () => {
       await programmaticScroll(SECTION[i + 1], observedSection);
     });
+    item.addEventListener("keydown", async event => {
+      if (event.key === "Enter") {
+        await programmaticScroll(SECTION[i + 1], observedSection);
+      }
+    });
   });
 }

@@ -11,6 +11,17 @@ const scrollSpeed = 0.08;
  */
 let isProgrammaticScroll = false;
 
+window.addEventListener("keydown", event => {
+  if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+    isProgrammaticScroll = true;
+  }
+});
+window.addEventListener("keyup", event => {
+  if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+    isProgrammaticScroll = false;
+  }
+});
+
 // 휠 스크롤 이벤트로 목표 위치 업데이트
 window.addEventListener(
   "wheel",

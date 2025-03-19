@@ -35,8 +35,8 @@
         <span>hi, im</span>
         <div class="intro__list">
           <ul>
+            <li>illustrator</li>
             <li>designer</li>
-            <li>publisher</li>
             <li>developer</li>
           </ul>
         </div>
@@ -48,11 +48,11 @@
           <span>home</span>
         </a>
         <menu id="nav__menu">
-          <li>about</li>
-          <li>develop</li>
-          <li>design</li>
-          <li>opensource</li>
-          <li>contact</li>
+          <li tabindex="0">about</li>
+          <li tabindex="0">develop</li>
+          <li tabindex="0">design</li>
+          <li tabindex="0">opensource</li>
+          <li tabindex="0">contact</li>
         </menu>
         <custom-svg
           id="nav__menu__button"
@@ -78,7 +78,7 @@
               ></video>
               <div id="scroll-down">
                 <div class="mouse"></div>
-                <p>drive slow</p>
+                <p>drive slow...</p>
               </div>
             </div>
           </div>
@@ -332,6 +332,7 @@
                 <a
                   target="_blank"
                   href="https://github.com/yorkie-team/yorkie-js-sdk/pull/637"
+                  tabindex="-1"
                 >
                   <span>01.</span>
                   <h3 class="opensource__item__title">feature</h3>
@@ -349,6 +350,7 @@
                 <a
                   target="_blank"
                   href="https://github.com/yorkie-team/yorkie-team.github.io/pull/110"
+                  tabindex="-1"
                 >
                   <span>02.</span>
                   <h3 class="opensource__item__title">feature</h3>
@@ -364,6 +366,7 @@
                 <a
                   target="_blank"
                   href="https://github.com/yorkie-team/yorkie-js-sdk/pull/683"
+                  tabindex="-1"
                 >
                   <span>03.</span>
                   <h3 class="opensource__item__title">documentation</h3>
@@ -380,6 +383,7 @@
                 <a
                   target="_blank"
                   href="https://github.com/yorkie-team/yorkie-team.github.io/issues/96"
+                  tabindex="-1"
                 >
                   <span>04.</span>
                   <h3 class="opensource__item__title">suggestion</h3>
@@ -389,23 +393,6 @@
                       업데이트하고 <strong>Next.js</strong> 버전 업데이트에 따른
                       page router => app router로의 <strong>migration</strong>을
                       제안하였습니다.
-                    </p>
-                  </div>
-                </a>
-              </li>
-              <li class="opensource__item">
-                <a
-                  target="_blank"
-                  href="https://github.com/yorkie-team/yorkie-team.github.io/issues/95"
-                >
-                  <span>05.</span>
-                  <h3 class="opensource__item__title">suggestion</h3>
-                  <div>
-                    <p>
-                      <strong>Yorkie</strong> 홈페이지의
-                      <strong>Documentation</strong> 탭 가독성 개선을 위해
-                      <strong>JS-SDK Reference</strong>의 위치를 상단으로
-                      조정하자 제안하였습니다.
                     </p>
                   </div>
                 </a>
@@ -423,7 +410,11 @@
               <span>banma1234@gmail.com</span>
               <div class="contact__link">
                 <li>
-                  <a href="https://github.com/banma1234" target="_blank">
+                  <a
+                    href="https://github.com/banma1234"
+                    target="_blank"
+                    tabindex="-1"
+                  >
                     <custom-svg
                       title="github"
                       size="1.6rem"
@@ -432,7 +423,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="https://chocoham.dev/" target="_blank">
+                  <a href="https://chocoham.dev/" target="_blank" tabindex="-1">
                     <custom-svg title="web" size="1.6rem" className="bi bi-x" />
                   </a>
                 </li>
@@ -440,6 +431,7 @@
                   <a
                     href="https://www.linkedin.com/in/%EB%B2%94%EC%88%98-%EB%B0%95-abb51b260/"
                     target="_blank"
+                    tabindex="-1"
                   >
                     <custom-svg
                       title="linkedIn"
