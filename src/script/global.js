@@ -44,7 +44,7 @@ function handleCarrousel() {
   setInterval(() => {
     count === 2 ? (count = 0) : count++;
     changeImage(count);
-  }, 4000);
+  }, 2000);
 }
 
 /**
